@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { DropdownButton, MenuItem } from 'react-bootstrap'
 
 class Listings extends Component {
   render() {
-    return (<div>Listings page</div>)
+    return (<div>
+listings
+    </div>)
   }
 }
 
