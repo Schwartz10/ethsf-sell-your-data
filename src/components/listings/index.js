@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { DropdownButton, MenuItem } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
 import { getListings } from '../../containers/listings/actions';
+import Listing from './Listing'
+import './styles.css'
 
 class Listings extends Component {
   componentDidMount() {
-    this.props.getListings();
+    if (!this.props.listingsLoaded && !this.props.listingsSuccess) {
+      this.props.getListings();
+    }
   }
 
   render() {
-    console.log(this.props.listings)
+    const listings = Object.keys(this.props.listings).map(id => this.props.listings[id]);
     return (
       <div className="container">
-
+        {/* <div className="col"> */}
+          <ListGroup>
+            {listings.map(({ dataHash, dataUri, metadata, owner }) =>
+              <Listing
+                key={dataHash}
+                dataHash={dataHash}
+                dataUri={dataUri}
+                metadata={metadata}
+                owner={owner}
+              />
+            )}
+          </ListGroup>
+        {/* </div> */}
       </div>
     )
   }
@@ -20,7 +36,9 @@ class Listings extends Component {
 
 const mapState = state => (
   {
-    listings: state.listings.data
+    listings: state.listings.data,
+    listingsLoaded: state.listings.listingsLoaded,
+    listingsSuccess: state.listings.listingsSuccess,
   }
 );
 

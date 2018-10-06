@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Nav from './components/Navbar';
+import Nav from './components/nav';
 import Listings from './components/listings';
 import Collections from './components/collections';
 import './App.css';
