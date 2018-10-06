@@ -15,8 +15,6 @@ export class Web3Manager extends Component {
     hasInjectedWeb3: PropTypes.bool.isRequired,
     hasCreatedWeb3: PropTypes.bool.isRequired,
     currentAddress: PropTypes.string.isRequired,
-    updateExchangeRateInRedux: PropTypes.func.isRequired,
-    currentExchangeRate: PropTypes.string.isRequired,
   }
 
   constructor(props) {
