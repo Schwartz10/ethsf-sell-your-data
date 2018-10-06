@@ -16,7 +16,7 @@ class Listings extends Component {
     const listings = Object.keys(this.props.listings).map(id => this.props.listings[id]);
     return (
       <div className="container">
-        {/* <div className="col"> */}
+        <h1>Listings</h1>
           <ListGroup>
             {listings.map(({ dataHash, dataUri, metadata, owner }) =>
               <Listing
@@ -25,10 +25,10 @@ class Listings extends Component {
                 dataUri={dataUri}
                 metadata={metadata}
                 owner={owner}
+                value='100000000000000' // 2 cents around
               />
             )}
           </ListGroup>
-        {/* </div> */}
       </div>
     )
   }

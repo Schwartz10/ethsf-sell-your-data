@@ -82,18 +82,13 @@ export const updateWeb3InRedux = (ethereumAddress, network, balance) => dispatch
   });
 };
 
-export const buyData = (dataHash, buyerAddress) => async dispatch => {
-  const offers = Truffle(LinniaOffers);
-  offers.setProvider(web3.currentProvider);
-  const offersInstance = await offers.at('0x7A1b9112f1C4542d14aaf1E564f69656f70FA840');
-  const makeOffer = await offersInstance.makeOffer(
-    dataHash,
-    publicKey,
-    '1000000000000',
-    {
-      from: buyerAddress,
-      to: '0x7A1b9112f1C4542d14aaf1E564f69656f70FA840'
-    })
+export const buyData = (dataHash, buyerAddress, ownerAddress, value) => async dispatch => {
+  console.log(value)
+  web3.eth.sendTransaction({
+    from: buyerAddress,
+    to: ownerAddress,
+    value,
+  })
   .on('transactionHash', (txHash) => handleTxSubmit(dispatch, txHash))
   .on('receipt', (txReceipt) => handleTxCompletion(dispatch, txReceipt))
   .on('error', (error, receipt) => handleTxError(dispatch, error, receipt));

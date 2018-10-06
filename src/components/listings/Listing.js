@@ -10,8 +10,8 @@ class Listing extends Component {
   }
 
   buyData(e) {
-    e.preventDefault();
-    this.props.buyData(this.props.dataHash, this.props.ethereumAddress);
+    e.preventDefault()
+    this.props.buyData(this.props.dataHash, this.props.ethereumAddress, this.props.owner, this.props.value);
   }
 
   render() {
