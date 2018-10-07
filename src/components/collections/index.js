@@ -8,7 +8,11 @@ class Collections extends Component {
   }
 
   render() {
-    return (<div>Collections page</div>)
+    return (
+      <div className="container">
+        <h1>Listings I own</h1>
+      </div>
+    )
   }
 }
 
