@@ -3,4 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #968DC2;
+  padding: 10px;
+  margin:10px;
 }

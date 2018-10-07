@@ -13,6 +13,7 @@
     "react-bootstrap": "^0.32.4",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.5.2",
+    "react-particles-js": "^2.3.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
@@ -22,6 +23,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "require": "^2.4.20",
+    "styled-components": "^3.4.9",
     "truffle-contract": "^4.0.0-beta.1",
     "web3": "^1.0.0-beta.36"
   },

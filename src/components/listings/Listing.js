@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ListGroupItem, Button, Col, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { buyData } from '../../containers/web3/actions';
+import styled, { css } from 'styled-components';
+import AnimatedNumber from 'react-animated-number';
 
 class Listing extends Component {
   constructor(props) {
@@ -18,6 +20,20 @@ class Listing extends Component {
     const { metadata } = this.props;
     const { gender, age } = JSON.parse(metadata);
     const [keyword1, keyword2, keyword3, keyword4, keyword5] = JSON.parse(metadata).keywords;
+    const Button = styled.button`
+      border-radius: 5px;
+      padding: 0.25em 1em;
+      margin: 0 1em;
+      background: transparent;
+      color: #dfcfdc;
+      border: 2px solid #dfcfdc;
+
+      ${props => props.primary && css`
+        background: #dfcfdc;
+        color: white;
+      `}
+    `;
+
     return (
       <div>
         <ListGroupItem>
@@ -26,7 +42,7 @@ class Listing extends Component {
               <div style={{display: 'flex', 'flexDirection': 'row'}}>
                 <div style={{ marginRight: '8px' }}>
                   <h5 style={{color: '#265a88'}}>Age</h5>
-                  <p>{age || 'N/A'}</p>
+                  <p>{ age || 'N/A'}</p>
                 </div>
                 <div>
                   <h5 style={{color: '#265a88'}}>Gender</h5>
@@ -51,7 +67,7 @@ class Listing extends Component {
             >
               Buy
             </Button>
-            <p style={{color: 'silver', 'textAlign': 'center'}}>$0.02</p>
+            <p style={{'font-size': '20px', padding:'20px', color: 'silver', 'textAlign': 'center'}}>$0.02</p>
           </div>
           </ListGroupItem>
       </div>

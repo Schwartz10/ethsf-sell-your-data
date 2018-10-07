@@ -1,8 +1,10 @@
 .nav {
   margin-bottom: 24px;
+  background-color:#B192C1;
 }
 
 .nav-item {
   width: 50vw;
   text-align: center;
+  background-color:#B192C1;
 }

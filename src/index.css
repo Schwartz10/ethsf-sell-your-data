@@ -21,14 +21,16 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 5;
+  font-size: 20px;
   font-family: 'DecimaBold', 'DecimaMonoLight', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(bg.png);
-  background-color: white;
+  /* background: url(bg.png); */
+  background-color: #495074;
+  color: #dfcfdc;
 }
 
 code {
