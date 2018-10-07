@@ -4,6 +4,7 @@ import Nav from './components/nav';
 import Listings from './components/listings';
 import Collections from './components/collections';
 import './App.css';
+import { Image } from 'react-bootstrap';
 
 class App extends Component {
   render() {
