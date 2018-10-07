@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { decrypt } from '../../containers/web3/actions';
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
-import LineChart from './Chart';
 import { FormControl, Button } from 'react-bootstrap';
+import ChartTile from './ChartTile';
 import { getCollections } from '../../containers/collections/actions';
 
 class Collections extends Component {
@@ -32,21 +31,19 @@ class Collections extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Listings I own</h1>
-        <h5>Private Key</h5>
-        <FormControl label="Password" type="password" onChange={this.onChange} />
-        <Button disabled={!this.state.password} bsStyle="warning" onClick={this.decrypt}>Decrypt Data</Button>
-        {this.props.decryptedDataSet.length && this.props.decryptedDataSet.map((json, idx) => {
-          return (
-            <ListGroup key={idx}>
-              <ListGroupItem>
-                <div className="col-lg-12 col-xs-10 ">
-                  <LineChart data={json}/>
-                </div>
-              </ListGroupItem>
-            </ListGroup>
-          )
-        })}
+        {
+          this.props.collectionsSuccess
+            ? <React.Fragment>
+              <h1>Listings I own</h1>
+              <h5>Private Key</h5>
+              <FormControl label="Password" type="password" onChange={this.onChange} />
+              <Button bsStyle="warning" onClick={this.decrypt}>Decrypt Data</Button>
+              {this.props.collections.map((collection, idx) => {
+                return (<ChartTile collection={collection} data={this.props.decryptedDataSet[idx]} key={idx} />)
+              })}
+            </React.Fragment>
+            : <div>Loading</div>
+        }
       </div>
     )
   }
@@ -54,7 +51,7 @@ class Collections extends Component {
 
 const mapState = state => (
   {
-    collections: state.collections.data,
+    collections: state.collections.data || [],
     decryptedDataSet: state.collections.decryptedDataSet,
     decryptedData: state.collections.decryptedData,
     collectionsLoading: state.collections.collectionsLoading,

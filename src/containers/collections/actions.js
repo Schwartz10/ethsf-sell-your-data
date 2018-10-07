@@ -1,4 +1,5 @@
 import request from 'request';
+import axios from 'axios';
 
 import {
   GET_COLLECTIONS_REQUEST,
@@ -29,9 +30,17 @@ export const getCollections = () => async dispatch => {
          operationName: null },
       json: true };
 
-    request(options, function (error, response, {data}) {
+    request(options, async function (error, response, {data}) {
       if (error) throw new Error(error);
-      dispatch({ type: GET_COLLECTIONS_SUCCESS, data: data.permissions })
+      const associatedMetadata = await Promise.all(data.permissions.map(({datahash}) =>
+        axios.get(`https://linniaserver.com/records/${datahash}`)
+      ))
+      const permissions = data.permissions.map((permission, idx) => {
+        const permissionWMD = data.permissions[idx];
+        permissionWMD.metadata = JSON.parse(associatedMetadata[idx].data.metadata);
+        return permissionWMD;
+      })
+      dispatch({ type: GET_COLLECTIONS_SUCCESS, data: permissions })
     });
   } catch (err) {
     dispatch({ type: GET_COLLECTIONS_FAILURE, err })
