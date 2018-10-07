@@ -39,8 +39,8 @@ class Listing extends Component {
         <ListGroupItem>
           <div>
             <Col s={6}>
-              <div style={{display: 'flex', 'flexDirection': 'row'}}>
-                <div style={{ marginRight: '8px' }}>
+              <div style={{margin:'10px', display: 'flex', 'flexDirection': 'row'}}>
+                <div style={{ marginRight: '15px' }}>
                   <h5 style={{color: '#265a88'}}>Age</h5>
                   <p>{ age || 'N/A'}</p>
                 </div>

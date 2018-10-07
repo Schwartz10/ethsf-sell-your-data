@@ -4,6 +4,8 @@ import { decrypt } from '../../containers/web3/actions';
 import { FormControl, Button } from 'react-bootstrap';
 import ChartTile from './ChartTile';
 import { getCollections } from '../../containers/collections/actions';
+import styled, { css } from 'styled-components';
+import AnimatedNumber from 'react-animated-number';
 
 class Collections extends Component {
   constructor(props){
@@ -29,6 +31,20 @@ class Collections extends Component {
   }
 
   render() {
+    const Button = styled.button`
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      background: transparent;
+      color: #dfcfdc;
+      border: 2px solid #dfcfdc;
+
+      ${props => props.primary && css`
+        background: #dfcfdc;
+        color: white;
+      `}
+    `;
+
     return (
       <div className="container">
         {
