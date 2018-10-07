@@ -19,10 +19,7 @@ class Collections extends Component {
   }
 
   decrypt() {
-    this.props.decrypt();
-
-
-
+    this.props.decrypt(this.props.collections, this.state.password);
     this.setState({ password: null })
   }
 

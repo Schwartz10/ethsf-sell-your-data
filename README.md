@@ -17,4 +17,6 @@ The idea behind this project is as follows:
 **HOW**
 
 - Linna smart contracts that are deployed on Ropsten testnet (serving as a placeholder for the Ethereum main chain) store pointers to where encrypted data lives (on another, permissioned side chain), who the data is owned by, and who has permission to view it.
-- Our side chain is an instance of a Kaleido permissioned blockchain, where nodes 
+- Our side chain is an instance of a Kaleido permissioned blockchain, where nodes are an alliance of trusted buyers of medical data. Their incentive is to further medical science
+- We leverage The Graph protocol to query event data throughout the relevant ropsten contracts (to get records and permissions).
+- The app is mobile responsive, and can be used with Coinbase Wallet.

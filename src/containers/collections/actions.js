@@ -38,4 +38,7 @@ export const getCollections = () => async dispatch => {
   }
 }
 
-export const decrypt = () => dispatch => dispatch({type: DECRYPTED_DATA});
+export const decrypt = (collections, privateKey) => dispatch => {
+  
+  dispatch({type: DECRYPTED_DATA});
+}
