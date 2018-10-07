@@ -2,7 +2,8 @@ import {
   GET_COLLECTIONS_REQUEST,
   GET_COLLECTIONS_SUCCESS,
   GET_COLLECTIONS_FAILURE,
-  DECRYPTED_DATA,
+  DECRYPTED_DATA_REQUEST,
+  DECRYPTED_DATA_SUCCESS,
 } from '../../constants/actionTypes';
 import initialState from './initialState';
 
@@ -30,10 +31,11 @@ const reducer = (state = initialState, action) => {
         collectionsLoaded: true,
         collectionsSuccess: false,
       }
-    case DECRYPTED_DATA:
+    case DECRYPTED_DATA_SUCCESS:
       return {
         ...state,
         decryptedData: true,
+        decryptedDataSet: action.data,
       }
     default:
       return state;

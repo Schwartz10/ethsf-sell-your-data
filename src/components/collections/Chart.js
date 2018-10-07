@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import {Line, Bar} from 'react-chartjs-2';
+// import { connect } from ''
 
 import juneJSON from '../../data/2018-06.json'
 
 
 class Chart extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
-    const json = juneJSON;
+    const json = this.props.data;
     const data = {
 
   //    Bug in React-chartjs-2 forces label to be put in XAxis

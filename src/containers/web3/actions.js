@@ -10,9 +10,8 @@ import { WEB3_INJECTED,
   TRANSACTION_MINED,
   TRANSACTION_DENIED,
   TRANSACTION_FAILURE,
-  GET_DATA_REQUEST,
-  GET_DATA_SUCESS,
-  GET_DATA_FAILURE,
+  DECRYPTED_DATA_REQUEST,
+  DECRYPTED_DATA_SUCCESS,
 } from '../../constants/actionTypes';
 import { WEB3_ENDPOINT, EXPECTED_INJECTED_WEB3_NETWORK_NUMBER } from '../../constants/endpoints';
 import { getAccounts, getNetwork, getBalance } from './web3Promisified';
@@ -92,11 +91,16 @@ export const buyData = (dataHash, buyerAddress, ownerAddress, value) => async di
   .on('error', (error, receipt) => handleTxError(dispatch, error, receipt));
 }
 
-export const getData = address => async dispatch => {
-  dispatch({ type: GET_DATA_REQUEST });
+export const decrypt = (collections, privateKey) => async dispatch => {
+  dispatch({ type: DECRYPTED_DATA_REQUEST });
+
   const storage = Truffle(StorageContract);
   storage.setProvider(poaProvider.currentProvider)
   const storageInstance = await storage.at("0x58b7f94f0e9648820150A844abb3d5666A757d85");
-  const data = await storageInstance.get.call('0xa1fe2d5ed0ac4e35be7b62a436a4dc4b4568f997dce06ed57e0f7fda900f8916');
-  // Linnia.util.decrypt(, data)
+  const poaData = await Promise.all(collections.map(collection => storageInstance.get.call(collection.datahash)));
+  const data = poaData.map(encodedData => {
+    const parsed = poaProvider.utils.hexToAscii(encodedData);
+    return JSON.parse(Linnia.util.decrypt(privateKey, JSON.parse(parsed)));
+  })
+  dispatch({ type: DECRYPTED_DATA_SUCCESS, data });
 }

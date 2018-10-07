@@ -4,6 +4,7 @@ const collectionsInitialState = {
   collectionsLoaded: false,
   collectionsSuccess: false,
   decryptedData: false,
+  decryptedDataSet: []
 };
 
 export default collectionsInitialState;
