@@ -97,7 +97,7 @@ export const getCollection = address => async dispatch => {
   dispatch({ type: GET_COLLECTIONS_REQUEST });
   const storage = Truffle(StorageContract);
   storage.setProvider(poaProvider.currentProvider)
-  const storageInstance = await storage.at("0xF89639F2A302917803A8300372388c2Eb9961D2C");
+  const storageInstance = await storage.at("0x58b7f94f0e9648820150A844abb3d5666A757d85");
   poaProvider.eth.getBlockNumber(console.log)
   storageInstance.getPastEvents('Store', {
     fromBlock: '5000',

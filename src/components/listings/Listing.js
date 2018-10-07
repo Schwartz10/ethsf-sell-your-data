@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListGroupItem, Button } from 'react-bootstrap';
+import { ListGroupItem, Button, Col, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { buyData } from '../../containers/web3/actions';
 
@@ -17,20 +17,43 @@ class Listing extends Component {
   render() {
     const { metadata } = this.props;
     const [keyword1, keyword2, keyword3, keyword4, keyword5] = JSON.parse(metadata).keywords;
+    console.log(metadata)
     return (
       <div>
-        <div>
-          <ListGroupItem>
-            <div className="col-lg-8 col-xs-6">
-              {keyword1}
-              {keyword2}
-              {keyword3}
-              {keyword4}
-              {keyword5}
-            </div>
-            <Button onClick={this.buyData} bsStyle="primary">Buy for</Button> {/* add price here */}
+        <ListGroupItem>
+          <div>
+            <Col s={6}>
+              <div style={{display: 'flex', 'flexDirection': 'row'}}>
+                <div style={{ marginRight: '8px' }}>
+                  <h5>Age</h5>
+                  <p>24</p>
+                </div>
+                <div>
+                  <h5>Gender</h5>
+                  <p>f</p>
+                </div>
+              </div>
+              <h5>Keywords</h5>
+              <p>
+                {keyword1},
+                {keyword2},
+                {keyword3},
+                {keyword4},
+                {keyword5}
+              </p>
+            </Col>
+          </div>
+          <div>
+            <Button
+              style={{ 'height': '40px' }}
+              onClick={this.buyData}
+              bsStyle="primary"
+            >
+              Buy
+            </Button>
+            <p>$0.02</p>
+          </div>
           </ListGroupItem>
-        </div>
       </div>
     );
   }
