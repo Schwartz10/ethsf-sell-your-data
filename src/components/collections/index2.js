@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { decrypt } from '../../containers/web3/actions';
+import { getCollection } from '../../containers/web3/actions';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import LineChart from './Chart';
 import { FormControl, Button } from 'react-bootstrap';
-import { getCollections } from '../../containers/collections/actions';
-import styled, { css } from 'styled-components';
-import AnimatedNumber from 'react-animated-number';
+import { getCollections, decrypt } from '../../containers/collections/actions';
+import { getData } from '../../containers/web3/actions';
 
 class Collections extends Component {
+  componentDidMount() {
+    if (!this.props.collectionsLoaded) this.props.getCollection()
+  }
+
   constructor(props){
     super(props);
     this.state = {
@@ -18,8 +21,8 @@ class Collections extends Component {
     this.decrypt = this.decrypt.bind(this);
   }
 
-  onChange({target: {value}}){
-    this.setState({ password: value });
+  onChange(password){
+    this.setState({ password });
   }
 
   decrypt() {
@@ -29,40 +32,24 @@ class Collections extends Component {
 
   async componentDidMount() {
     if (!this.props.collectionsLoaded) this.props.getCollections();
+    // await this.props.getData('0xa1fe2d5ed0ac4e35be7b62a436a4dc4b4568f997dce06ed57e0f7fda900f8916');
   }
 
   render() {
-    const Button = styled.button`
-      border-radius: 5px;
-      padding: 10px;
-      margin: 10px;
-      background: transparent;
-      color: #dfcfdc;
-      border: 2px solid #dfcfdc;
-
-      ${props => props.primary && css`
-        background: #dfcfdc;
-        color: white;
-      `}
-    `;
-
     return (
+
       <div className="container">
         <h1>Listings I own</h1>
         <h5>Private Key</h5>
         <FormControl label="Password" type="password" onChange={this.onChange} />
         <Button disabled={!this.state.password} bsStyle="warning" onClick={this.decrypt}>Decrypt Data</Button>
-        {this.props.decryptedDataSet.length && this.props.decryptedDataSet.map((json, idx) => {
-          return (
-            <ListGroup key={idx}>
-              <ListGroupItem>
-                <div className="col-lg-12 col-xs-10 ">
-                  <LineChart data={json}/>
-                </div>
-              </ListGroupItem>
-            </ListGroup>
-          )
-        })}
+        <ListGroup>
+          <ListGroupItem>
+            <div className="col-lg-12 col-xs-10 ">
+              <LineChart data={this.props.collections}/>
+            </div>
+          </ListGroupItem>
+        </ListGroup>
       </div>
     )
   }
@@ -71,8 +58,6 @@ class Collections extends Component {
 const mapState = state => (
   {
     collections: state.collections.data,
-    decryptedDataSet: state.collections.decryptedDataSet,
-    decryptedData: state.collections.decryptedData,
     collectionsLoading: state.collections.collectionsLoading,
     collectionsLoaded: state.collections.collectionsLoaded,
     collectionsSuccess: state.collections.collectionsSuccess,
@@ -81,5 +66,6 @@ const mapState = state => (
 
 export default connect(mapState, {
   getCollections,
+  getData,
   decrypt,
 })(Collections);

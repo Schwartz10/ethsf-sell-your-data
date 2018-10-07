@@ -18,9 +18,9 @@ class Chart extends Component {
         data: json.map(x => x['count']),
         fill: false,
         backgroundColor: '#e7aae1',
-        borderColor: '#c584d7',
+        borderColor: '#dfcfdc',
         hoverBackgroundColor: '#010515',
-        hoverBorderColor: '#71B37C',
+        hoverBorderColor: '#dfcfdc',
         yAxisID: 'y-axis-1',
         lineTension: 0.4
 
@@ -30,9 +30,9 @@ class Chart extends Component {
       data: json.map(x => x['calorie']),
       fill: true,
       backgroundColor: '#010515',
-      borderColor: '#c584d7',
+      borderColor: '#dfcfdc',
       hoverBackgroundColor: '#71B37C',
-      hoverBorderColor: '#71B37C',
+      hoverBorderColor: '#dfcfdc',
       yAxisID: 'y-axis-1'
 
     },{
@@ -40,12 +40,12 @@ class Chart extends Component {
       type:'line',
       data: json.map(x => x['distance']),
       fill: false,
-      borderColor: '#c584d7',
+      borderColor: '#dfcfdc',
       backgroundColor: '#010515',
-      pointBorderColor: '#c584d7',
+      pointBorderColor: '##dfcfdc',
       pointBackgroundColor: '#EC932F',
-      pointHoverBackgroundColor: '#EC932F',
-      pointHoverBorderColor: '#EC932F',
+      pointHoverBackgroundColor: '#dfcfdc',
+      pointHoverBorderColor: '#dfcfdc',
       yAxisID: 'y-axis-2'
     },
 
