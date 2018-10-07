@@ -1,0 +1,4684 @@
+{
+  "contractName": "LinniaDDEXHub",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tokenContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "offersContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "destroy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hubContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "stakingContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "name": "destroyAndSend",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_hubContract",
+          "type": "address"
+        },
+        {
+          "name": "_tokenContract",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "LinniaOffersContractSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "LinniaStakingContractSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "LinniaHubContractSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "LinniaTokenContractSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_offersContract",
+          "type": "address"
+        }
+      ],
+      "name": "setOffersContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_stakingContract",
+          "type": "address"
+        }
+      ],
+      "name": "setStakingContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_hubContract",
+          "type": "address"
+        }
+      ],
+      "name": "setHubContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_tokenContract",
+          "type": "address"
+        }
+      ],
+      "name": "setTokenContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160408061121f8339810180604052810190808051906020019092919080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610095826100b6640100000000026401000000009004565b506100ae8161021b640100000000026401000000009004565b505050610380565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561011457600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7cbcfae1666034476be8154210d9c57aca60fcc88430554a25164d2a4e2f69958184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561027957600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fd8375ea3f6710a8296518ca2c54a2213d24d7c571485ca366a72b1a423f880998184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b610e908061038f6000396000f3006080604052600436106100c5576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355a373d6146100d4578063715018a61461012b57806382a0e38c1461014257806383197ef01461019957806389a8f23d146101b05780638da5cb5b1461020b578063934666e5146102625780639dc7cb23146102b95780639dd373b914610314578063bbcd5bbe1461036f578063ee99205c146103ca578063f2fde38b14610421578063f5074f4114610464575b3480156100d157600080fd5b50005b3480156100e057600080fd5b506100e96104a7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561013757600080fd5b506101406104cd565b005b34801561014e57600080fd5b506101576105cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101a557600080fd5b506101ae6105f5565b005b3480156101bc57600080fd5b506101f1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061068a565b604051808215151515815260200191505060405180910390f35b34801561021757600080fd5b506102206107ef565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026e57600080fd5b50610277610814565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102c557600080fd5b506102fa600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061083a565b604051808215151515815260200191505060405180910390f35b34801561032057600080fd5b50610355600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061099f565b604051808215151515815260200191505060405180910390f35b34801561037b57600080fd5b506103b0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b04565b604051808215151515815260200191505060405180910390f35b3480156103d657600080fd5b506103df610c69565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561042d57600080fd5b50610462600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610c8f565b005b34801561047057600080fd5b506104a5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610cf6565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561052857600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561065057600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106e857600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7cbcfae1666034476be8154210d9c57aca60fcc88430554a25164d2a4e2f69958184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561089857600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fa95e5cd3e59b451a2365f7787c86481ac4868d846c2ce18cbc38b96bca4bfc638184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156109fd57600080fd5b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f100b31a397fc21c881a314757b4d921267e86f93714cde90b4764b976d635b698184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610b6257600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fd8375ea3f6710a8296518ca2c54a2213d24d7c571485ca366a72b1a423f880998184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610cea57600080fd5b610cf381610d6a565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610d5157600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16ff5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610da657600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582077d387465e5af22f8b177eda82447ce6a4ba8614caa54db437fe2bd3b36e0d5b0029",
+  "deployedBytecode": "0x6080604052600436106100c5576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355a373d6146100d4578063715018a61461012b57806382a0e38c1461014257806383197ef01461019957806389a8f23d146101b05780638da5cb5b1461020b578063934666e5146102625780639dc7cb23146102b95780639dd373b914610314578063bbcd5bbe1461036f578063ee99205c146103ca578063f2fde38b14610421578063f5074f4114610464575b3480156100d157600080fd5b50005b3480156100e057600080fd5b506100e96104a7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561013757600080fd5b506101406104cd565b005b34801561014e57600080fd5b506101576105cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101a557600080fd5b506101ae6105f5565b005b3480156101bc57600080fd5b506101f1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061068a565b604051808215151515815260200191505060405180910390f35b34801561021757600080fd5b506102206107ef565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026e57600080fd5b50610277610814565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102c557600080fd5b506102fa600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061083a565b604051808215151515815260200191505060405180910390f35b34801561032057600080fd5b50610355600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061099f565b604051808215151515815260200191505060405180910390f35b34801561037b57600080fd5b506103b0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b04565b604051808215151515815260200191505060405180910390f35b3480156103d657600080fd5b506103df610c69565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561042d57600080fd5b50610462600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610c8f565b005b34801561047057600080fd5b506104a5600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610cf6565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561052857600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561065057600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106e857600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f7cbcfae1666034476be8154210d9c57aca60fcc88430554a25164d2a4e2f69958184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561089857600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fa95e5cd3e59b451a2365f7787c86481ac4868d846c2ce18cbc38b96bca4bfc638184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156109fd57600080fd5b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f100b31a397fc21c881a314757b4d921267e86f93714cde90b4764b976d635b698184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b6000806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610b6257600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905082600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fd8375ea3f6710a8296518ca2c54a2213d24d7c571485ca366a72b1a423f880998184604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a16001915050919050565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610cea57600080fd5b610cf381610d6a565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610d5157600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16ff5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610da657600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582077d387465e5af22f8b177eda82447ce6a4ba8614caa54db437fe2bd3b36e0d5b0029",
+  "sourceMap": "408:1821:0:-;;;857:155;8:9:-1;5:2;;;30:1;27;20:12;5:2;857:155:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;575:10:12;567:5;;:18;;;;;;;;;;;;;;;;;;935:28:0;950:12;935:14;;;:28;;;:::i;:::-;;973:32;990:14;973:16;;;:32;;;:::i;:::-;;857:155;;408:1821;;1662:272;1760:4;1780:12;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1803:11:0;;;;;;;;;;;1780:35;;1839:12;1825:11;;:26;;;;;;;;;;;;;;;;;;1866:40;1887:4;1893:12;1866:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1923:4;1916:11;;1662:272;;;;:::o;1940:285::-;2041:4;2061:12;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;2084:13:0;;;;;;;;;;;2061:37;;2124:14;2108:13;;:30;;;;;;;;;;;;;;;;;;2153:44;2176:4;2182:14;2153:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2214:4;2207:11;;1940:285;;;;:::o;408:1821::-;;;;;;;",
+  "deployedSourceMap": "408:1821:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;408:1821:0;;463:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;463:29:0;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:111:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:12;;;;;;532:34:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;532:34:0;;;;;;;;;;;;;;;;;;;;;;;;;;;329:66:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;329:66:9;;;;;;1662:272:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1662:272:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:20:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:12;;;;;;;;;;;;;;;;;;;;;;;;;;;498:28:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;498:28:0;;;;;;;;;;;;;;;;;;;;;;;;;;;1046:298;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1046:298:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1350:306;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1350:306:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1940:285;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1940:285:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;572:36;;8:9:-1;5:2;;;30:1;27;20:12;5:2;572:36:0;;;;;;;;;;;;;;;;;;;;;;;;;;;1274:103:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1274:103:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;399:96:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;399:96:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;463:29:0;;;;;;;;;;;;;:::o;1001:111:12:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1077:5;;;;;;;;;;;1058:25;;;;;;;;;;;;1105:1;1089:5;;:18;;;;;;;;;;;;;;;;;;1001:111::o;532:34:0:-;;;;;;;;;;;;;:::o;329:66:9:-;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;384:5:9;;;;;;;;;;;371:19;;;1662:272:0;1760:4;1780:12;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1803:11:0;;;;;;;;;;;1780:35;;1839:12;1825:11;;:26;;;;;;;;;;;;;;;;;;1866:40;1887:4;1893:12;1866:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1923:4;1916:11;;1662:272;;;;:::o;238:20:12:-;;;;;;;;;;;;;:::o;498:28:0:-;;;;;;;;;;;;;:::o;1046:298::-;1155:4;1175:12;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1198:14:0;;;;;;;;;;;1175:38;;1240:15;1223:14;;:32;;;;;;;;;;;;;;;;;;1270:46;1294:4;1300:15;1270:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1333:4;1326:11;;1046:298;;;;:::o;1350:306::-;1462:4;1482:12;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1505:15:0;;;;;;;;;;;1482:39;;1549:16;1531:15;;:34;;;;;;;;;;;;;;;;;;1580:48;1605:4;1611:16;1580:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1645:4;1638:11;;1350:306;;;;:::o;1940:285::-;2041:4;2061:12;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;2084:13:0;;;;;;;;;;;2061:37;;2124:14;2108:13;;:30;;;;;;;;;;;;;;;;;;2153:44;2176:4;2182:14;2153:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2214:4;2207:11;;1940:285;;;;:::o;572:36::-;;;;;;;;;;;;;:::o;1274:103:12:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1343:29;1362:9;1343:18;:29::i;:::-;1274:103;:::o;399:96:9:-;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;479:10:9;466:24;;;1512:171:12;1603:1;1582:23;;:9;:23;;;;1574:32;;;;;;;;1645:9;1617:38;;1638:5;;;;;;;;;;;1617:38;;;;;;;;;;;;1669:9;1661:5;;:17;;;;;;;;;;;;;;;;;;1512:171;:::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"@linniaprotocol/linnia-token-contracts/contracts/LINToken.sol\";\nimport \"@linniaprotocol/linnia-smart-contracts/contracts/LinniaHub.sol\";\nimport \"openzeppelin-solidity/contracts/lifecycle/Destructible.sol\";\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\nimport \"./LinniaOffers.sol\";\nimport \"./LinniaStaking.sol\";\n\n/**\n * @title Linnia DDEX Hub Contract\n */\n\n\ncontract LinniaDDEXHub is Ownable, Destructible {\n\n    LINToken public tokenContract;\n    LinniaHub public hubContract;\n    LinniaOffers public offersContract;\n    LinniaStaking public stakingContract;\n\n    event LinniaOffersContractSet(address from, address to);\n    event LinniaStakingContractSet(address from, address to);\n    event LinniaHubContractSet(address from, address to);\n    event LinniaTokenContractSet(address from, address to);\n\n    constructor(LinniaHub _hubContract, LINToken _tokenContract) public {\n        setHubContract(_hubContract);\n        setTokenContract(_tokenContract);\n    }\n\n    function () public { }\n\n    function setOffersContract(LinniaOffers _offersContract)\n        external\n        onlyOwner\n        returns (bool)\n    {\n        address prev = address(offersContract);\n        offersContract = _offersContract;\n        emit LinniaOffersContractSet(prev, _offersContract);\n        return true;\n    }\n\n    function setStakingContract(LinniaStaking _stakingContract)\n        external\n        onlyOwner\n        returns (bool)\n    {\n        address prev = address(stakingContract);\n        stakingContract = _stakingContract;\n        emit LinniaStakingContractSet(prev, _stakingContract);\n        return true;\n    }\n\n    function setHubContract(LinniaHub _hubContract)\n        public\n        onlyOwner\n        returns (bool)\n    {\n        address prev = address(hubContract);\n        hubContract = _hubContract;\n        emit LinniaHubContractSet(prev, _hubContract);\n        return true;\n    }\n\n    function setTokenContract(LINToken _tokenContract)\n        public\n        onlyOwner\n        returns (bool)\n    {\n        address prev = address(tokenContract);\n        tokenContract = _tokenContract;\n        emit LinniaTokenContractSet(prev, _tokenContract);\n        return true;\n    }\n\n\n}\n",
+  "sourcePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaDDEXHub.sol",
+  "ast": {
+    "absolutePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaDDEXHub.sol",
+    "exportedSymbols": {
+      "LinniaDDEXHub": [
+        172
+      ]
+    },
+    "id": 173,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "@linniaprotocol/linnia-token-contracts/contracts/LINToken.sol",
+        "file": "@linniaprotocol/linnia-token-contracts/contracts/LINToken.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 1844,
+        "src": "25:71:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@linniaprotocol/linnia-smart-contracts/contracts/LinniaHub.sol",
+        "file": "@linniaprotocol/linnia-smart-contracts/contracts/LinniaHub.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 839,
+        "src": "97:72:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Destructible.sol",
+        "file": "openzeppelin-solidity/contracts/lifecycle/Destructible.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 1872,
+        "src": "170:68:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 5,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 2112,
+        "src": "239:63:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaOffers.sol",
+        "file": "./LinniaOffers.sol",
+        "id": 6,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 432,
+        "src": "303:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaStaking.sol",
+        "file": "./LinniaStaking.sol",
+        "id": 7,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 655,
+        "src": "332:29:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 8,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2111,
+              "src": "434:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$2111",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 9,
+            "nodeType": "InheritanceSpecifier",
+            "src": "434:7:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10,
+              "name": "Destructible",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1871,
+              "src": "443:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Destructible_$1871",
+                "typeString": "contract Destructible"
+              }
+            },
+            "id": 11,
+            "nodeType": "InheritanceSpecifier",
+            "src": "443:12:0"
+          }
+        ],
+        "contractDependencies": [
+          1871,
+          2111
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Linnia DDEX Hub Contract",
+        "fullyImplemented": true,
+        "id": 172,
+        "linearizedBaseContracts": [
+          172,
+          1871,
+          2111
+        ],
+        "name": "LinniaDDEXHub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 13,
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "463:29:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LINToken_$1843",
+              "typeString": "contract LINToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 12,
+              "name": "LINToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1843,
+              "src": "463:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LINToken_$1843",
+                "typeString": "contract LINToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15,
+            "name": "hubContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "498:28:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LinniaHub_$838",
+              "typeString": "contract LinniaHub"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 14,
+              "name": "LinniaHub",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 838,
+              "src": "498:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LinniaHub_$838",
+                "typeString": "contract LinniaHub"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17,
+            "name": "offersContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "532:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LinniaOffers_$431",
+              "typeString": "contract LinniaOffers"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 16,
+              "name": "LinniaOffers",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 431,
+              "src": "532:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                "typeString": "contract LinniaOffers"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 19,
+            "name": "stakingContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "572:36:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LinniaStaking_$654",
+              "typeString": "contract LinniaStaking"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 18,
+              "name": "LinniaStaking",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 654,
+              "src": "572:13:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                "typeString": "contract LinniaStaking"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 25,
+            "name": "LinniaOffersContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "645:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "645:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "659:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "659:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "644:26:0"
+            },
+            "src": "615:56:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 31,
+            "name": "LinniaStakingContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "707:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "707:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "721:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "721:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "706:26:0"
+            },
+            "src": "676:57:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 37,
+            "name": "LinniaHubContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 33,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "765:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 32,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 35,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "779:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "779:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "764:26:0"
+            },
+            "src": "738:53:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 43,
+            "name": "LinniaTokenContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 39,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "825:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 38,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "839:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 40,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:26:0"
+            },
+            "src": "796:55:0"
+          },
+          {
+            "body": {
+              "id": 58,
+              "nodeType": "Block",
+              "src": "925:87:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 51,
+                        "name": "_hubContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 45,
+                        "src": "950:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      ],
+                      "id": 50,
+                      "name": "setHubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 144,
+                      "src": "935:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_LinniaHub_$838_$returns$_t_bool_$",
+                        "typeString": "function (contract LinniaHub) returns (bool)"
+                      }
+                    },
+                    "id": 52,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "935:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 53,
+                  "nodeType": "ExpressionStatement",
+                  "src": "935:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 55,
+                        "name": "_tokenContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "990:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      ],
+                      "id": 54,
+                      "name": "setTokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 171,
+                      "src": "973:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_LINToken_$1843_$returns$_t_bool_$",
+                        "typeString": "function (contract LINToken) returns (bool)"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "973:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "ExpressionStatement",
+                  "src": "973:32:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 59,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45,
+                  "name": "_hubContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59,
+                  "src": "869:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaHub_$838",
+                    "typeString": "contract LinniaHub"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 44,
+                    "name": "LinniaHub",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 838,
+                    "src": "869:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaHub_$838",
+                      "typeString": "contract LinniaHub"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 47,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59,
+                  "src": "893:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LINToken_$1843",
+                    "typeString": "contract LINToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 46,
+                    "name": "LINToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1843,
+                    "src": "893:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LINToken_$1843",
+                      "typeString": "contract LINToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "868:49:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "925:0:0"
+            },
+            "scope": 172,
+            "src": "857:155:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 62,
+              "nodeType": "Block",
+              "src": "1037:3:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 63,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1027:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 61,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1037:0:0"
+            },
+            "scope": 172,
+            "src": "1018:22:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 89,
+              "nodeType": "Block",
+              "src": "1165:179:0",
+              "statements": [
+                {
+                  "assignments": [
+                    73
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 73,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 90,
+                      "src": "1175:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 72,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1175:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 77,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 75,
+                        "name": "offersContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "1198:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      ],
+                      "id": 74,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1190:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1190:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1175:38:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 78,
+                      "name": "offersContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "1223:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                        "typeString": "contract LinniaOffers"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 79,
+                      "name": "_offersContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 65,
+                      "src": "1240:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                        "typeString": "contract LinniaOffers"
+                      }
+                    },
+                    "src": "1223:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                      "typeString": "contract LinniaOffers"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1223:32:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 83,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 73,
+                        "src": "1294:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 84,
+                        "name": "_offersContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "1300:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      ],
+                      "id": 82,
+                      "name": "LinniaOffersContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "1270:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 85,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1270:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 86,
+                  "nodeType": "EmitStatement",
+                  "src": "1265:51:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 87,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1333:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 71,
+                  "id": 88,
+                  "nodeType": "Return",
+                  "src": "1326:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 90,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 68,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 67,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "1128:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1128:9:0"
+              }
+            ],
+            "name": "setOffersContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "name": "_offersContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 90,
+                  "src": "1073:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                    "typeString": "contract LinniaOffers"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 64,
+                    "name": "LinniaOffers",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 431,
+                    "src": "1073:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                      "typeString": "contract LinniaOffers"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1072:30:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 90,
+                  "src": "1155:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1155:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1154:6:0"
+            },
+            "scope": 172,
+            "src": "1046:298:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 116,
+              "nodeType": "Block",
+              "src": "1472:184:0",
+              "statements": [
+                {
+                  "assignments": [
+                    100
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 100,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 117,
+                      "src": "1482:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 99,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1482:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 104,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 102,
+                        "name": "stakingContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "1505:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      ],
+                      "id": 101,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1497:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1497:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1482:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 107,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 105,
+                      "name": "stakingContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19,
+                      "src": "1531:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                        "typeString": "contract LinniaStaking"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 106,
+                      "name": "_stakingContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 92,
+                      "src": "1549:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                        "typeString": "contract LinniaStaking"
+                      }
+                    },
+                    "src": "1531:34:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                      "typeString": "contract LinniaStaking"
+                    }
+                  },
+                  "id": 108,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1531:34:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 100,
+                        "src": "1605:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 111,
+                        "name": "_stakingContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 92,
+                        "src": "1611:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      ],
+                      "id": 109,
+                      "name": "LinniaStakingContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 31,
+                      "src": "1580:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 112,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1580:48:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 113,
+                  "nodeType": "EmitStatement",
+                  "src": "1575:53:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 114,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1645:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 98,
+                  "id": 115,
+                  "nodeType": "Return",
+                  "src": "1638:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 117,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 95,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 94,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "1435:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1435:9:0"
+              }
+            ],
+            "name": "setStakingContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 92,
+                  "name": "_stakingContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "1378:30:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                    "typeString": "contract LinniaStaking"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 91,
+                    "name": "LinniaStaking",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 654,
+                    "src": "1378:13:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                      "typeString": "contract LinniaStaking"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1377:32:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 98,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "1462:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 96,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1462:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1461:6:0"
+            },
+            "scope": 172,
+            "src": "1350:306:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 143,
+              "nodeType": "Block",
+              "src": "1770:164:0",
+              "statements": [
+                {
+                  "assignments": [
+                    127
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 127,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 144,
+                      "src": "1780:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 126,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1780:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 131,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 129,
+                        "name": "hubContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "1803:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      ],
+                      "id": 128,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1795:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 130,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1795:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1780:35:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 132,
+                      "name": "hubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15,
+                      "src": "1825:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaHub_$838",
+                        "typeString": "contract LinniaHub"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 133,
+                      "name": "_hubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 119,
+                      "src": "1839:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaHub_$838",
+                        "typeString": "contract LinniaHub"
+                      }
+                    },
+                    "src": "1825:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaHub_$838",
+                      "typeString": "contract LinniaHub"
+                    }
+                  },
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1825:26:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 137,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 127,
+                        "src": "1887:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 138,
+                        "name": "_hubContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 119,
+                        "src": "1893:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      ],
+                      "id": 136,
+                      "name": "LinniaHubContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 37,
+                      "src": "1866:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1866:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 140,
+                  "nodeType": "EmitStatement",
+                  "src": "1861:45:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 141,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1923:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 125,
+                  "id": 142,
+                  "nodeType": "Return",
+                  "src": "1916:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 144,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 122,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 121,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "1733:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1733:9:0"
+              }
+            ],
+            "name": "setHubContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 120,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 119,
+                  "name": "_hubContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "1686:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaHub_$838",
+                    "typeString": "contract LinniaHub"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 118,
+                    "name": "LinniaHub",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 838,
+                    "src": "1686:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaHub_$838",
+                      "typeString": "contract LinniaHub"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1685:24:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 125,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 124,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "1760:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 123,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1760:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1759:6:0"
+            },
+            "scope": 172,
+            "src": "1662:272:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 170,
+              "nodeType": "Block",
+              "src": "2051:174:0",
+              "statements": [
+                {
+                  "assignments": [
+                    154
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 154,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 171,
+                      "src": "2061:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 153,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2061:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 158,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 156,
+                        "name": "tokenContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "2084:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      ],
+                      "id": 155,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "2076:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2076:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2061:37:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 161,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 159,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13,
+                      "src": "2108:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LINToken_$1843",
+                        "typeString": "contract LINToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 160,
+                      "name": "_tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 146,
+                      "src": "2124:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LINToken_$1843",
+                        "typeString": "contract LINToken"
+                      }
+                    },
+                    "src": "2108:30:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LINToken_$1843",
+                      "typeString": "contract LINToken"
+                    }
+                  },
+                  "id": 162,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2108:30:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 164,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 154,
+                        "src": "2176:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 165,
+                        "name": "_tokenContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 146,
+                        "src": "2182:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      ],
+                      "id": 163,
+                      "name": "LinniaTokenContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 43,
+                      "src": "2153:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 166,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2153:44:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 167,
+                  "nodeType": "EmitStatement",
+                  "src": "2148:49:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "2214:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 152,
+                  "id": 169,
+                  "nodeType": "Return",
+                  "src": "2207:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 171,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 149,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 148,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "2014:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2014:9:0"
+              }
+            ],
+            "name": "setTokenContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 146,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 171,
+                  "src": "1966:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LINToken_$1843",
+                    "typeString": "contract LINToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 145,
+                    "name": "LINToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1843,
+                    "src": "1966:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LINToken_$1843",
+                      "typeString": "contract LINToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1965:25:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 152,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 151,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 171,
+                  "src": "2041:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 150,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2041:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2040:6:0"
+            },
+            "scope": 172,
+            "src": "1940:285:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 173,
+        "src": "408:1821:0"
+      }
+    ],
+    "src": "0:2230:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaDDEXHub.sol",
+    "exportedSymbols": {
+      "LinniaDDEXHub": [
+        172
+      ]
+    },
+    "id": 173,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "@linniaprotocol/linnia-token-contracts/contracts/LINToken.sol",
+        "file": "@linniaprotocol/linnia-token-contracts/contracts/LINToken.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 1844,
+        "src": "25:71:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@linniaprotocol/linnia-smart-contracts/contracts/LinniaHub.sol",
+        "file": "@linniaprotocol/linnia-smart-contracts/contracts/LinniaHub.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 839,
+        "src": "97:72:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Destructible.sol",
+        "file": "openzeppelin-solidity/contracts/lifecycle/Destructible.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 1872,
+        "src": "170:68:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 5,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 2112,
+        "src": "239:63:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaOffers.sol",
+        "file": "./LinniaOffers.sol",
+        "id": 6,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 432,
+        "src": "303:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/blaushmild/projects/linnia/linnia-ddex-smart-contracts/contracts/LinniaStaking.sol",
+        "file": "./LinniaStaking.sol",
+        "id": 7,
+        "nodeType": "ImportDirective",
+        "scope": 173,
+        "sourceUnit": 655,
+        "src": "332:29:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 8,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2111,
+              "src": "434:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$2111",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 9,
+            "nodeType": "InheritanceSpecifier",
+            "src": "434:7:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10,
+              "name": "Destructible",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1871,
+              "src": "443:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Destructible_$1871",
+                "typeString": "contract Destructible"
+              }
+            },
+            "id": 11,
+            "nodeType": "InheritanceSpecifier",
+            "src": "443:12:0"
+          }
+        ],
+        "contractDependencies": [
+          1871,
+          2111
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Linnia DDEX Hub Contract",
+        "fullyImplemented": true,
+        "id": 172,
+        "linearizedBaseContracts": [
+          172,
+          1871,
+          2111
+        ],
+        "name": "LinniaDDEXHub",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 13,
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "463:29:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LINToken_$1843",
+              "typeString": "contract LINToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 12,
+              "name": "LINToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1843,
+              "src": "463:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LINToken_$1843",
+                "typeString": "contract LINToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15,
+            "name": "hubContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "498:28:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LinniaHub_$838",
+              "typeString": "contract LinniaHub"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 14,
+              "name": "LinniaHub",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 838,
+              "src": "498:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LinniaHub_$838",
+                "typeString": "contract LinniaHub"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17,
+            "name": "offersContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "532:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LinniaOffers_$431",
+              "typeString": "contract LinniaOffers"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 16,
+              "name": "LinniaOffers",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 431,
+              "src": "532:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                "typeString": "contract LinniaOffers"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 19,
+            "name": "stakingContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "572:36:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_LinniaStaking_$654",
+              "typeString": "contract LinniaStaking"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 18,
+              "name": "LinniaStaking",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 654,
+              "src": "572:13:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                "typeString": "contract LinniaStaking"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 25,
+            "name": "LinniaOffersContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "645:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "645:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "659:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "659:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "644:26:0"
+            },
+            "src": "615:56:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 31,
+            "name": "LinniaStakingContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "707:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "707:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "721:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "721:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "706:26:0"
+            },
+            "src": "676:57:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 37,
+            "name": "LinniaHubContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 33,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "765:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 32,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 35,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "779:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "779:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "764:26:0"
+            },
+            "src": "738:53:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 43,
+            "name": "LinniaTokenContractSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 39,
+                  "indexed": false,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "825:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 38,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41,
+                  "indexed": false,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "839:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 40,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:26:0"
+            },
+            "src": "796:55:0"
+          },
+          {
+            "body": {
+              "id": 58,
+              "nodeType": "Block",
+              "src": "925:87:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 51,
+                        "name": "_hubContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 45,
+                        "src": "950:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      ],
+                      "id": 50,
+                      "name": "setHubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 144,
+                      "src": "935:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_LinniaHub_$838_$returns$_t_bool_$",
+                        "typeString": "function (contract LinniaHub) returns (bool)"
+                      }
+                    },
+                    "id": 52,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "935:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 53,
+                  "nodeType": "ExpressionStatement",
+                  "src": "935:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 55,
+                        "name": "_tokenContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "990:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      ],
+                      "id": 54,
+                      "name": "setTokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 171,
+                      "src": "973:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_LINToken_$1843_$returns$_t_bool_$",
+                        "typeString": "function (contract LINToken) returns (bool)"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "973:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "ExpressionStatement",
+                  "src": "973:32:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 59,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45,
+                  "name": "_hubContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59,
+                  "src": "869:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaHub_$838",
+                    "typeString": "contract LinniaHub"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 44,
+                    "name": "LinniaHub",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 838,
+                    "src": "869:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaHub_$838",
+                      "typeString": "contract LinniaHub"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 47,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59,
+                  "src": "893:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LINToken_$1843",
+                    "typeString": "contract LINToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 46,
+                    "name": "LINToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1843,
+                    "src": "893:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LINToken_$1843",
+                      "typeString": "contract LINToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "868:49:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "925:0:0"
+            },
+            "scope": 172,
+            "src": "857:155:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 62,
+              "nodeType": "Block",
+              "src": "1037:3:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 63,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1027:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 61,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1037:0:0"
+            },
+            "scope": 172,
+            "src": "1018:22:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 89,
+              "nodeType": "Block",
+              "src": "1165:179:0",
+              "statements": [
+                {
+                  "assignments": [
+                    73
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 73,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 90,
+                      "src": "1175:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 72,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1175:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 77,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 75,
+                        "name": "offersContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "1198:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      ],
+                      "id": 74,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1190:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1190:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1175:38:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 78,
+                      "name": "offersContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "1223:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                        "typeString": "contract LinniaOffers"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 79,
+                      "name": "_offersContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 65,
+                      "src": "1240:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                        "typeString": "contract LinniaOffers"
+                      }
+                    },
+                    "src": "1223:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                      "typeString": "contract LinniaOffers"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1223:32:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 83,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 73,
+                        "src": "1294:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 84,
+                        "name": "_offersContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "1300:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                          "typeString": "contract LinniaOffers"
+                        }
+                      ],
+                      "id": 82,
+                      "name": "LinniaOffersContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "1270:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 85,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1270:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 86,
+                  "nodeType": "EmitStatement",
+                  "src": "1265:51:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 87,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1333:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 71,
+                  "id": 88,
+                  "nodeType": "Return",
+                  "src": "1326:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 90,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 68,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 67,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "1128:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1128:9:0"
+              }
+            ],
+            "name": "setOffersContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "name": "_offersContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 90,
+                  "src": "1073:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                    "typeString": "contract LinniaOffers"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 64,
+                    "name": "LinniaOffers",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 431,
+                    "src": "1073:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaOffers_$431",
+                      "typeString": "contract LinniaOffers"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1072:30:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 90,
+                  "src": "1155:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1155:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1154:6:0"
+            },
+            "scope": 172,
+            "src": "1046:298:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 116,
+              "nodeType": "Block",
+              "src": "1472:184:0",
+              "statements": [
+                {
+                  "assignments": [
+                    100
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 100,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 117,
+                      "src": "1482:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 99,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1482:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 104,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 102,
+                        "name": "stakingContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "1505:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      ],
+                      "id": 101,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1497:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1497:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1482:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 107,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 105,
+                      "name": "stakingContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19,
+                      "src": "1531:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                        "typeString": "contract LinniaStaking"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 106,
+                      "name": "_stakingContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 92,
+                      "src": "1549:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                        "typeString": "contract LinniaStaking"
+                      }
+                    },
+                    "src": "1531:34:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                      "typeString": "contract LinniaStaking"
+                    }
+                  },
+                  "id": 108,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1531:34:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 100,
+                        "src": "1605:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 111,
+                        "name": "_stakingContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 92,
+                        "src": "1611:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                          "typeString": "contract LinniaStaking"
+                        }
+                      ],
+                      "id": 109,
+                      "name": "LinniaStakingContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 31,
+                      "src": "1580:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 112,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1580:48:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 113,
+                  "nodeType": "EmitStatement",
+                  "src": "1575:53:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 114,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1645:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 98,
+                  "id": 115,
+                  "nodeType": "Return",
+                  "src": "1638:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 117,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 95,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 94,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "1435:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1435:9:0"
+              }
+            ],
+            "name": "setStakingContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 92,
+                  "name": "_stakingContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "1378:30:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                    "typeString": "contract LinniaStaking"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 91,
+                    "name": "LinniaStaking",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 654,
+                    "src": "1378:13:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaStaking_$654",
+                      "typeString": "contract LinniaStaking"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1377:32:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 98,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "1462:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 96,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1462:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1461:6:0"
+            },
+            "scope": 172,
+            "src": "1350:306:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 143,
+              "nodeType": "Block",
+              "src": "1770:164:0",
+              "statements": [
+                {
+                  "assignments": [
+                    127
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 127,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 144,
+                      "src": "1780:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 126,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1780:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 131,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 129,
+                        "name": "hubContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "1803:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      ],
+                      "id": 128,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1795:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 130,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1795:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1780:35:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 132,
+                      "name": "hubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15,
+                      "src": "1825:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaHub_$838",
+                        "typeString": "contract LinniaHub"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 133,
+                      "name": "_hubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 119,
+                      "src": "1839:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LinniaHub_$838",
+                        "typeString": "contract LinniaHub"
+                      }
+                    },
+                    "src": "1825:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaHub_$838",
+                      "typeString": "contract LinniaHub"
+                    }
+                  },
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1825:26:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 137,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 127,
+                        "src": "1887:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 138,
+                        "name": "_hubContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 119,
+                        "src": "1893:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LinniaHub_$838",
+                          "typeString": "contract LinniaHub"
+                        }
+                      ],
+                      "id": 136,
+                      "name": "LinniaHubContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 37,
+                      "src": "1866:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1866:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 140,
+                  "nodeType": "EmitStatement",
+                  "src": "1861:45:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 141,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1923:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 125,
+                  "id": 142,
+                  "nodeType": "Return",
+                  "src": "1916:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 144,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 122,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 121,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "1733:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1733:9:0"
+              }
+            ],
+            "name": "setHubContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 120,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 119,
+                  "name": "_hubContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "1686:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LinniaHub_$838",
+                    "typeString": "contract LinniaHub"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 118,
+                    "name": "LinniaHub",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 838,
+                    "src": "1686:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LinniaHub_$838",
+                      "typeString": "contract LinniaHub"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1685:24:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 125,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 124,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "1760:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 123,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1760:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1759:6:0"
+            },
+            "scope": 172,
+            "src": "1662:272:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 170,
+              "nodeType": "Block",
+              "src": "2051:174:0",
+              "statements": [
+                {
+                  "assignments": [
+                    154
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 154,
+                      "name": "prev",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 171,
+                      "src": "2061:12:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 153,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2061:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 158,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 156,
+                        "name": "tokenContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "2084:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      ],
+                      "id": 155,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "2076:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2076:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2061:37:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 161,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 159,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13,
+                      "src": "2108:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LINToken_$1843",
+                        "typeString": "contract LINToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 160,
+                      "name": "_tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 146,
+                      "src": "2124:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_LINToken_$1843",
+                        "typeString": "contract LINToken"
+                      }
+                    },
+                    "src": "2108:30:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LINToken_$1843",
+                      "typeString": "contract LINToken"
+                    }
+                  },
+                  "id": 162,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2108:30:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 164,
+                        "name": "prev",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 154,
+                        "src": "2176:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 165,
+                        "name": "_tokenContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 146,
+                        "src": "2182:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_LINToken_$1843",
+                          "typeString": "contract LINToken"
+                        }
+                      ],
+                      "id": 163,
+                      "name": "LinniaTokenContractSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 43,
+                      "src": "2153:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 166,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2153:44:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 167,
+                  "nodeType": "EmitStatement",
+                  "src": "2148:49:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "2214:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 152,
+                  "id": 169,
+                  "nodeType": "Return",
+                  "src": "2207:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 171,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 149,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 148,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2059,
+                  "src": "2014:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2014:9:0"
+              }
+            ],
+            "name": "setTokenContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 146,
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 171,
+                  "src": "1966:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_LINToken_$1843",
+                    "typeString": "contract LINToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 145,
+                    "name": "LINToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1843,
+                    "src": "1966:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_LINToken_$1843",
+                      "typeString": "contract LINToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1965:25:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 152,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 151,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 171,
+                  "src": "2041:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 150,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2041:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2040:6:0"
+            },
+            "scope": 172,
+            "src": "1940:285:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 173,
+        "src": "408:1821:0"
+      }
+    ],
+    "src": "0:2230:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xa95e5cd3e59b451a2365f7787c86481ac4868d846c2ce18cbc38b96bca4bfc63": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "name": "LinniaOffersContractSet",
+          "type": "event"
+        },
+        "0x100b31a397fc21c881a314757b4d921267e86f93714cde90b4764b976d635b69": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "name": "LinniaStakingContractSet",
+          "type": "event"
+        },
+        "0x7cbcfae1666034476be8154210d9c57aca60fcc88430554a25164d2a4e2f6995": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "name": "LinniaHubContractSet",
+          "type": "event"
+        },
+        "0xd8375ea3f6710a8296518ca2c54a2213d24d7c571485ca366a72b1a423f88099": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "name": "LinniaTokenContractSet",
+          "type": "event"
+        },
+        "0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipRenounced",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xafc8c3e35262125c5e0ff112c8c076cfbdb9fd24",
+      "transactionHash": "0x6655513c2ae2909932ebcd8f4385f17391f44234a0f01c9f6cc7b5f637cb835d"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-03T23:43:04.840Z"
+}

@@ -1,0 +1,15 @@
+{
+  \"dataFormat\":\"json\",
+  \"domain\":\"health data\",
+  \"storage\":\"KaleidoPOAChain\",
+  \"encryptionScheme\":\"x25519-xsalsa20-poly1305\",
+  \"encryptionPublicKey\":\"g8R3h9lGMiXkX7o8pxqkkOn1ZO/sE0GDT/daKBSsN1A=\",
+  \"linniajsVersion\":\"0.2.1\",
+  \"providerName\":\"Linnia Test Provider\",
+  \"providerEthereumAddress\":\"0x861f4675c4Dea21DD265d41DeAB2c01e4e75b420\",
+  \"keywords\":[\"cancer\",\"tumor\",\"patient\",\"fitbit\",\"data\"],
+  \"priceInWei\":\"100000000000000\",
+  \"gender\":\"m"\,
+  \"age"\:\"23"\,
+  \"dataProvider"\:\"Fitbit"\
+}

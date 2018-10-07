@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@linniaprotocol/linnia-js": "^0.3.0",
     "axios": "^0.18.0",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
@@ -15,6 +16,7 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "truffle-contract": "^4.0.0-beta.1",
     "web3": "^1.0.0-beta.36"
   },
   "scripts": {

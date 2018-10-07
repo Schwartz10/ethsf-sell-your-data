@@ -2,10 +2,10 @@ import {
   WEB3_INJECTED,
   WEB3_CREATED,
   CHANGED_METAMASK_CREDENTIALS,
-  // TRANSACTION_ATTEMPT,
-  // TRANSACTION_SUBMITTED,
-  // TRANSACTION_DENIED,
-  // TRANSACTION_FAILURE
+  TRANSACTION_ATTEMPT,
+  TRANSACTION_SUBMITTED,
+  TRANSACTION_DENIED,
+  TRANSACTION_FAILURE
 } from '../../constants/actionTypes';
 
 import initialState from './initialState';
@@ -40,14 +40,14 @@ const reducer = (state = initialState, action) => {
         ethereumAddress: action.ethereumAddress ? action.ethereumAddress : '',
         balance: action.balance,
       }
-    // case TRANSACTION_ATTEMPT:
-    //   return { ...state, transactionAttempting: true }
-    // case TRANSACTION_SUBMITTED:
-    //   return { ...state, transactionAttempting: false }
-    // case TRANSACTION_DENIED:
-    //   return { ...state, transactionAttempting: false }
-    // case TRANSACTION_FAILURE:
-    //   return { ...state, transactionAttempting: false }
+    case TRANSACTION_ATTEMPT:
+      return { ...state, transactionAttempting: true }
+    case TRANSACTION_SUBMITTED:
+      return { ...state, transactionAttempting: false }
+    case TRANSACTION_DENIED:
+      return { ...state, transactionAttempting: false }
+    case TRANSACTION_FAILURE:
+      return { ...state, transactionAttempting: false }
     default:
       return state;
   }
