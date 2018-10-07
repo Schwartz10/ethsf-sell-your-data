@@ -6,7 +6,7 @@ import Listing from './Listing'
 import './styles.css'
 
 class Listings extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     if (!this.props.listingsLoaded && !this.props.listingsSuccess) {
       this.props.getListings();
     }
@@ -18,11 +18,10 @@ class Listings extends Component {
       <div className="container">
         <h1>Listings</h1>
           <ListGroup>
-            {listings.map(({ dataHash, dataUri, metadata, owner }) =>
+            {listings.map(({ datahash, metadata, owner }) =>
               <Listing
-                key={dataHash}
-                dataHash={dataHash}
-                dataUri={dataUri}
+                key={datahash}
+                dataHash={datahash}
                 metadata={metadata}
                 owner={owner}
                 value='100000000000000' // 2 cents around

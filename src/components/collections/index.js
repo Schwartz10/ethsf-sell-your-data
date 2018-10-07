@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCollection } from '../../containers/web3/actions';
+import { getCollections } from '../../containers/collections/actions';
 
 class Collections extends Component {
   componentDidMount() {
-    if (!this.props.collectionsLoaded) this.props.getCollection()
+    if (!this.props.collectionsLoaded) this.props.getCollections()
   }
 
   render() {
@@ -21,4 +21,4 @@ const mapState = state => (
   }
 )
 
-export default connect(mapState, {getCollection})(Collections);
+export default connect(mapState, {getCollections})(Collections);

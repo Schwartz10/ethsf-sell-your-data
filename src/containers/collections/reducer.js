@@ -18,9 +18,9 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.data,
-        colletionsLoading: false,
-        colletionsLoaded: true,
-        colletionsSuccess: true,
+        collectionsLoading: false,
+        collectionsLoaded: true,
+        collectionsSuccess: true,
       }
     case GET_COLLECTIONS_FAILURE:
       return {
