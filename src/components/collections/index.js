@@ -22,8 +22,10 @@ class Collections extends Component {
   }
 
   decrypt() {
-    this.props.decrypt(this.props.collections, this.state.password);
-    this.setState({ password: null })
+    if (!this.props.decryptedData) {
+      this.props.decrypt(this.props.collections, this.state.password);
+      this.setState({ password: null })
+    }
   }
 
   async componentDidMount() {
@@ -44,7 +46,6 @@ class Collections extends Component {
         color: white;
       `}
     `;
-
     return (
       <div className="container">
         {
@@ -53,7 +54,12 @@ class Collections extends Component {
               <h1>Listings I own</h1>
               <h5>Private Key</h5>
               <FormControl label="Password" type="password" onChange={this.onChange} />
-              <Button bsStyle="warning" onClick={this.decrypt}>Decrypt Data</Button>
+              <Button disabled={this.props.decryptedData} bsStyle="warning" onClick={this.decrypt}>
+                {!this.props.decryptedData
+                  ? 'Decrypt Data'
+                  : 'Decrypted'
+                }
+              </Button>
               {this.props.collections.map((collection, idx) => {
                 return (<ChartTile collection={collection} data={this.props.decryptedDataSet[idx]} key={idx} />)
               })}
