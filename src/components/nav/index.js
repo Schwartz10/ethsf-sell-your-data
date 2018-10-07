@@ -26,12 +26,11 @@ class NavBar extends Component {
   }
 
   render () {
-    console.log(window.location.pathname)
     return (
       <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem className="nav-item" eventKey="1" title="Listings">
-            Listings
-          </NavItem>
+        <NavItem className="nav-item" eventKey="1" title="Listings">
+          Listings
+        </NavItem>
         <NavItem className="nav-item" eventKey="2" title="Collections">
           Collections
         </NavItem>

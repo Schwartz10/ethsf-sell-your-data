@@ -25,21 +25,21 @@ class Listing extends Component {
             <Col s={6}>
               <div style={{display: 'flex', 'flexDirection': 'row'}}>
                 <div style={{ marginRight: '8px' }}>
-                  <h5>Age</h5>
+                  <h5 style={{color: '#265a88'}}>Age</h5>
                   <p>24</p>
                 </div>
                 <div>
-                  <h5>Gender</h5>
-                  <p>f</p>
+                  <h5 style={{color: '#265a88'}}>Gender</h5>
+                  <p>F</p>
                 </div>
               </div>
-              <h5>Keywords</h5>
+              <h5 style={{color: '#265a88'}}>Keywords</h5>
               <p>
-                {keyword1},
-                {keyword2},
-                {keyword3},
-                {keyword4},
-                {keyword5}
+                {`${keyword1}, `}
+                {`${keyword2}, `}
+                {`${keyword3}, `}
+                {`${keyword4}, `}
+                {`${keyword5}`}
               </p>
             </Col>
           </div>
@@ -51,7 +51,7 @@ class Listing extends Component {
             >
               Buy
             </Button>
-            <p>$0.02</p>
+            <p style={{color: 'silver', 'textAlign': 'center'}}>$0.02</p>
           </div>
           </ListGroupItem>
       </div>

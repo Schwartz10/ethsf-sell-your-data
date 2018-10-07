@@ -3,7 +3,8 @@ import request from 'request';
 import {
   GET_COLLECTIONS_REQUEST,
   GET_COLLECTIONS_SUCCESS,
-  GET_COLLECTIONS_FAILURE
+  GET_COLLECTIONS_FAILURE,
+  DECRYPTED_DATA,
 } from '../../constants/actionTypes';
 
 export const getCollections = () => async dispatch => {
@@ -36,3 +37,5 @@ export const getCollections = () => async dispatch => {
     dispatch({ type: GET_COLLECTIONS_FAILURE, err })
   }
 }
+
+export const decrypt = () => dispatch => dispatch({type: DECRYPTED_DATA});

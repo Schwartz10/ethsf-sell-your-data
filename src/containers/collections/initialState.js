@@ -3,6 +3,7 @@ const collectionsInitialState = {
   collectionsLoading: false,
   collectionsLoaded: false,
   collectionsSuccess: false,
+  decryptedData: false,
 };
 
 export default collectionsInitialState;
