@@ -2,7 +2,6 @@ import Web3 from 'web3';
 import Linnia from '@linniaprotocol/linnia-js';
 import StorageContract from '../../build/contracts/Storage.json';
 import Truffle from 'truffle-contract';
-import { publicKey } from '../../secret'
 
 import { WEB3_INJECTED,
   WEB3_CREATED,
@@ -11,9 +10,9 @@ import { WEB3_INJECTED,
   TRANSACTION_MINED,
   TRANSACTION_DENIED,
   TRANSACTION_FAILURE,
-  GET_COLLECTIONS_REQUEST,
-  GET_COLLECTIONS_SUCCESS,
-  GET_LISTINGS_FAILURE,
+  GET_DATA_REQUEST,
+  GET_DATA_SUCESS,
+  GET_DATA_FAILURE,
 } from '../../constants/actionTypes';
 import { WEB3_ENDPOINT, EXPECTED_INJECTED_WEB3_NETWORK_NUMBER } from '../../constants/endpoints';
 import { getAccounts, getNetwork, getBalance } from './web3Promisified';
@@ -93,17 +92,11 @@ export const buyData = (dataHash, buyerAddress, ownerAddress, value) => async di
   .on('error', (error, receipt) => handleTxError(dispatch, error, receipt));
 }
 
-export const getCollection = address => async dispatch => {
-  dispatch({ type: GET_COLLECTIONS_REQUEST });
+export const getData = address => async dispatch => {
+  dispatch({ type: GET_DATA_REQUEST });
   const storage = Truffle(StorageContract);
   storage.setProvider(poaProvider.currentProvider)
-  const storageInstance = await storage.at("0xF89639F2A302917803A8300372388c2Eb9961D2C");
-  poaProvider.eth.getBlockNumber(console.log)
-  storageInstance.getPastEvents('Store', {
-    fromBlock: '5000',
-    toBlock: 'latest',
-  }, (err, res) => {
-    console.log('yooo', err, res)
-  });
-  // const tx = await storageInstance.dataStorage
+  const storageInstance = await storage.at("0x58b7f94f0e9648820150A844abb3d5666A757d85");
+  const data = await storageInstance.get.call('0xa1fe2d5ed0ac4e35be7b62a436a4dc4b4568f997dce06ed57e0f7fda900f8916');
+  // Linnia.util.decrypt(, data)
 }
