@@ -16,8 +16,8 @@ class Listing extends Component {
 
   render() {
     const { metadata } = this.props;
+    const { gender, age } = JSON.parse(metadata);
     const [keyword1, keyword2, keyword3, keyword4, keyword5] = JSON.parse(metadata).keywords;
-    console.log(metadata)
     return (
       <div>
         <ListGroupItem>
@@ -26,11 +26,11 @@ class Listing extends Component {
               <div style={{display: 'flex', 'flexDirection': 'row'}}>
                 <div style={{ marginRight: '8px' }}>
                   <h5 style={{color: '#265a88'}}>Age</h5>
-                  <p>24</p>
+                  <p>{age || 'N/A'}</p>
                 </div>
                 <div>
                   <h5 style={{color: '#265a88'}}>Gender</h5>
-                  <p>F</p>
+                  <p>{(gender && gender.toUpperCase()) || 'N/A'}</p>
                 </div>
               </div>
               <h5 style={{color: '#265a88'}}>Keywords</h5>
